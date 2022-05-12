@@ -1,0 +1,63 @@
+import tkinter as tk
+win=tk.Tk()
+win.title("计算器")
+win.geometry("300x300")
+
+l=tk.Label(win,text='please type first number',width=30,height=2)
+l.pack()
+a1=tk.Variable()
+e=tk.Entry(win,textvariable=a1,show=None)
+e.pack()
+
+l=tk.Label(win,text='please type second number',width=30,height=2)
+l.pack()
+a2=tk.Variable()
+e=tk.Entry(win,textvariable=a2,show=None)
+e.pack()
+
+def fun1():
+    a=a1.get()
+    b=a2.get()
+    data=float(a)+float(b)
+    text.delete(0.0,"end")
+    text.insert(tk.INSERT,data)
+
+def fun2():
+    a=a1.get()
+    b=a2.get()
+    data=float(a)-float(b)
+    text.delete(0.0,"end")
+    text.insert(tk.INSERT,data)
+
+def fun3():
+    a=a1.get()
+    b=a2.get()
+    data=float(a)*float(b)
+    text.delete(0.0,"end")
+    text.insert(tk.INSERT,data)
+
+def fun4():
+    a=a1.get()
+    b=a2.get()
+    data=float(a)/float(b)
+    text.delete(0.0,"end")
+    text.insert(tk.INSERT,data)
+
+b=tk.Button(win,text="+",command=fun1)
+b.pack()
+
+b=tk.Button(win,text="-",command=fun2)
+b.pack()
+
+b=tk.Button(win,text="*",command=fun3)
+b.pack()
+
+b=tk.Button(win,text="/",command=fun4)
+b.pack()
+
+l=tk.Label(win,text='Answer',width=30,height=2)
+l.pack()
+
+text=tk.Text(win,width=30,height=2)
+text.pack()
+win.mainloop()
