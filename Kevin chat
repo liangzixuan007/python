@@ -1,0 +1,72 @@
+import sys
+def menu():
+    print("      ")
+    print("1,add new friend")
+    print("2,search your friend")
+    print("3,delete your friend")
+    print("4,Find all friend ")
+    print("5,exit      ")
+    a=input("Please type 1-5 to select the corresponding function*_*：")
+    return int(a)
+
+peoples=[]
+
+def add():
+  people={}
+  name=input("please type the name:")
+  age=input("please type the age:")
+  numb=input("please type the phone number:")
+  kchat=input("please type the kevin number:")
+  people["name"]=name
+  people["age"]=age
+  people["numb"]=numb
+  people["kchat"]=kchat
+  peoples.append(people)
+
+def find():
+    name=input("please type the name that you want search:")
+    f=0
+    for i in peoples:
+       if(i["name"]==name):
+           print("age:",i["age"])
+           print("phone number:",i["numb"])
+           print("kevin number:",i["kchat"])
+           f=1
+           break
+    if(f==0):
+        print("This friend does not exist")
+
+def delp():
+    name=input("please type the name that you want delete:")
+    f=0
+    for i in peoples:
+       if(i["name"]==name):
+           peoples.remove(i)
+           f=1
+           print("already delete!")
+           break
+    if(f==0):
+        print("This friend does not exist  >_<  ")
+
+def view():
+    if(len(peoples)==0):
+        print("Now don't have the friend!")
+    else:
+        print("name    age     phone number         kevin number")
+        for i in peoples:
+            print(i["name"],"    ",i["age"],"        ",i["numb"],"                    ",i["kchat"])
+
+          
+while True:
+    people=[]
+    m=menu()
+    if(m==1):
+        add()
+    elif(m==2):
+        find()
+    elif(m==3):
+        delp()
+    elif(m==4):
+        view()
+    elif(m==5):
+        sys.exit()
