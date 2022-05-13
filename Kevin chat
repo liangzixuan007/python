@@ -52,9 +52,9 @@ def view():
     if(len(peoples)==0):
         print("Now don't have the friend!")
     else:
-        print("name    age     phone number         kevin number")
+        print("{:^20}{:^20}{:^20}{:^20}".format("name","age","phone number","kevin number"))
         for i in peoples:
-            print(i["name"],"    ",i["age"],"        ",i["numb"],"                    ",i["kchat"])
+            print("{:^20}{:^20}{:^20}{:^20}".format(i["name"],i["age"],i["numb"],i["kchat"]))
 
           
 while True:
